@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fadhila Rizki Mustika Kustriyaningrum — EEPISAT Portfolio">
+<title>Fadhila Rizki — EEPISAT Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f5f6f2;
+  --paper:#ffffff;
+  --ink:#142019;
+  --muted:#69746d;
+  --line:#dce3dc;
+  --green:#315d47;
+  --soft:#e7efe9;
+  --gold:#b98b4b;
+  --dark:#18221c;
+  --max:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.7;
+}
+a{color:inherit}
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(245,246,242,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--max);margin:auto;padding:17px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{
+  text-decoration:none;font:700 1.05rem "Space Grotesk",sans-serif;
+  letter-spacing:-.04em;
+}
+.logo span{color:var(--green)}
+.links{display:flex;gap:23px}
+.links a{
+  text-decoration:none;color:var(--muted);
+  font-size:.77rem;font-weight:700;
+}
+.links a:hover{color:var(--green)}
+
+main{max-width:var(--max);margin:auto;padding:0 24px}
+.hero{
+  min-height:86vh;
+  padding:95px 0 75px;
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:70px;align-items:center;
+}
+.eyebrow,.section-kicker{
+  color:var(--green);
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.eyebrow:before{
+  content:"";display:inline-block;width:29px;height:2px;
+  background:var(--gold);vertical-align:middle;margin-right:9px;
+}
+h1{
+  font:700 clamp(3.7rem,8vw,7.4rem)/.88 "Space Grotesk",sans-serif;
+  letter-spacing:-.085em;margin-top:18px;
+}
+h1 span{color:var(--green)}
+.hero-copy{
+  max-width:680px;color:var(--muted);
+  font-size:1rem;margin-top:27px;
+}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-block;text-decoration:none;
+  padding:10px 16px;border:1px solid var(--dark);
+  border-radius:999px;font-size:.78rem;font-weight:700;
+}
+.btn.primary{background:var(--dark);color:white}
+
+.hero-note{
+  margin-top:32px;color:#87918a;
+  font-size:.72rem;font-weight:600;
+  letter-spacing:.04em;
+}
+.hero-panel{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:25px;padding:31px;
+  box-shadow:0 22px 55px rgba(20,32,25,.07);
+  transform:rotate(1deg);
+}
+.initial{
+  width:52px;height:52px;border-radius:15px;
+  display:grid;place-items:center;background:var(--soft);
+  color:var(--green);font:700 1rem "Space Grotesk",sans-serif;
+  margin-bottom:26px;
+}
+.hero-panel h2{
+  font:600 1.65rem/1.12 "Space Grotesk",sans-serif;
+  letter-spacing:-.045em;margin-bottom:12px;
+}
+.hero-panel p{color:var(--muted);font-size:.87rem}
+.hero-panel hr{border:0;border-top:1px solid var(--line);margin:23px 0}
+.panel-label{
+  color:var(--green);font-size:.68rem;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+}
+
+section{border-top:1px solid var(--line);padding:88px 0}
+.section-head{
+  display:grid;grid-template-columns:.7fr 1.3fr;
+  gap:50px;margin-bottom:40px;
+}
+.section-title{
+  font:600 clamp(2.3rem,5vw,4.2rem)/.95 "Space Grotesk",sans-serif;
+  letter-spacing:-.065em;margin-top:8px;
+}
+.section-intro{color:var(--muted);max-width:720px}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.card{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:21px;padding:27px;
+}
+.card h3{
+  font:600 1.15rem "Space Grotesk",sans-serif;margin-bottom:9px
+}
+.card p{color:var(--muted);font-size:.88rem}
+.quote{
+  margin-top:18px;padding:15px 17px;
+  border-left:3px solid var(--green);
+  background:var(--soft);border-radius:0 12px 12px 0;
+  font-size:.84rem;
+}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
+.tag{
+  padding:5px 9px;background:var(--soft);color:var(--green);
+  border-radius:999px;font-size:.69rem;font-weight:700;
+}
+
+.event-grid{display:grid;gap:14px}
+.event{
+  display:grid;grid-template-columns:90px 1fr 205px;
+  gap:25px;align-items:start;
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:21px;padding:27px;
+}
+.event-no{font:600 2.2rem "Space Grotesk";color:var(--green);opacity:.7}
+.event h3{font:600 1.25rem "Space Grotesk",sans-serif}
+.event-type{
+  color:var(--green);font-size:.68rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;margin:3px 0 9px;
+}
+.event p{color:var(--muted);font-size:.86rem}
+.event-side{
+  border-left:1px solid var(--line);padding-left:20px;
+}
+.event-side b{
+  display:block;font:600 .83rem "Space Grotesk",sans-serif;margin-bottom:5px
+}
+.event-side span{color:var(--muted);font-size:.74rem}
+
+.project-list{display:grid;gap:12px}
+.project{
+  display:grid;grid-template-columns:55px 1fr 280px;
+  gap:25px;align-items:start;
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:20px;padding:25px;
+  transition:.22s ease;
+}
+.project:hover{transform:translateY(-2px);box-shadow:0 16px 35px rgba(20,32,25,.06)}
+.project-no{font:600 1.65rem "Space Grotesk";color:var(--green)}
+.project-type{
+  color:var(--green);font-size:.66rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase
+}
+.project h3{font:600 1.2rem "Space Grotesk";margin:5px 0 7px}
+.project p{color:var(--muted);font-size:.84rem}
+.project-impact{
+  border-left:1px solid var(--line);
+  padding-left:20px;color:var(--muted);font-size:.77rem;
+}
+.project-impact b{
+  display:block;color:var(--ink);font-size:.72rem;
+  text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;
+}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.pill{
+  border:1px solid var(--line);padding:4px 8px;
+  border-radius:999px;font-size:.64rem;font-weight:600
+}
+
+.org-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.org{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:21px;padding:27px;
+}
+.org-top{display:flex;justify-content:space-between;gap:15px}
+.org h3{font:600 1.15rem "Space Grotesk"}
+.role{
+  color:var(--green);font-size:.68rem;font-weight:700;
+  white-space:nowrap;text-align:right
+}
+.org p{color:var(--muted);font-size:.84rem;margin-top:9px}
+.org ul{margin:12px 0 0 17px;color:var(--muted);font-size:.79rem}
+
+.achievement-list{display:grid;gap:10px}
+.achievement{
+  display:grid;grid-template-columns:125px 1fr auto;
+  gap:20px;align-items:center;
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:19px;padding:20px 23px;
+}
+.achievement-date{color:var(--green);font-size:.7rem;font-weight:700}
+.achievement h3{font:600 .99rem "Space Grotesk"}
+.achievement p{color:var(--muted);font-size:.75rem}
+.achievement strong{color:var(--green);font-size:.77rem;white-space:nowrap}
+
+.skill-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);margin-top:40px
+}
+.skill{
+  padding:22px 18px;border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line)
+}
+.skill:nth-child(3n){border-right:0}
+.skill b{font:600 1rem "Space Grotesk"}
+.skill span{display:block;color:var(--muted);font-size:.73rem;margin-top:4px}
+
+.contact{
+  background:var(--dark);color:white;
+  border-radius:27px;padding:52px;
+  display:grid;grid-template-columns:1fr auto;
+  gap:35px;align-items:end;
+}
+.contact .section-kicker{color:#bcd0c3}
+.contact h2{
+  font:600 clamp(2.4rem,5vw,4.5rem)/.95 "Space Grotesk";
+  letter-spacing:-.065em;margin:10px 0 15px;
+}
+.contact p{color:#aeb8b1;max-width:600px;font-size:.86rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:8px}
+.contact-links a{
+  color:white;text-decoration:none;border:1px solid #455249;
+  padding:9px 13px;border-radius:999px;font-size:.73rem;font-weight:700
+}
+footer{
+  max-width:var(--max);margin:auto;padding:28px 24px 45px;
+  border-top:1px solid var(--line);color:var(--muted);
+  font-size:.7rem;display:flex;justify-content:space-between
+}
+
+@media(max-width:850px){
+  .links{display:none}
+  .hero{grid-template-columns:1fr;gap:45px}
+  .section-head{grid-template-columns:1fr;gap:15px}
+  .event{grid-template-columns:60px 1fr}
+  .event-side{grid-column:2;border-left:0;border-top:1px solid var(--line);padding:13px 0 0}
+  .project{grid-template-columns:45px 1fr}
+  .project-impact{grid-column:2;border-left:0;border-top:1px solid var(--line);padding:13px 0 0}
+  .org-grid,.about-grid{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr 1fr}
+  .skill:nth-child(3n){border-right:1px solid var(--line)}
+  .skill:nth-child(2n){border-right:0}
+  .achievement{grid-template-columns:100px 1fr}
+  .achievement strong{grid-column:2}
+  .contact{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  main{padding:0 17px}
+  .nav-inner{padding-left:17px;padding-right:17px}
+  .hero{padding-top:65px}
+  h1{font-size:3.4rem}
+  section{padding:70px 0}
+  .event{grid-template-columns:1fr}
+  .event-side{grid-column:auto}
+  .project{grid-template-columns:1fr}
+  .project-impact{grid-column:auto}
+  .skill-grid{grid-template-columns:1fr}
+  .skill,.skill:nth-child(3n){border-right:0}
+  .achievement{grid-template-columns:1fr}
+  .achievement strong{grid-column:auto}
+  .contact{padding:34px 25px}
+  footer{padding-left:17px;padding-right:17px;display:block}
+  footer span{display:block;margin-top:5px}
+}
+</style>
+</head>
+
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">Fadhila<span>.</span></a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#projects">Projects</a>
+      <a href="#organizations">Organizations</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">EEPISAT Recruitment · Internal Division · 2026</div>
+    <h1>Fadhila<br><span>Rizki.</span></h1>
+    <p class="hero-copy">
+      Hi, I’m <strong>Fadhila Rizki Mustika Kustriyaningrum</strong>, a Multimedia Engineering
+      Technology student at PENS. My experiences have taken me from student organizations and
+      youth programs to stage performances, event production, creative projects, and competitions.
+      Along the way, I have learned that good teamwork starts with communication and responsibility.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#events">Explore my experience ↓</a>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+    <div class="hero-note">
+      COMMUNICATION · EVENT EXPERIENCE · COORDINATION · TEAMWORK · RESPONSIBILITY
+    </div>
+  </div>
+
+  <aside class="hero-panel">
+    <div class="initial">FR</div>
+    <h2>I enjoy being part of the people behind a successful event.</h2>
+    <p>
+      From preparing a performance to coordinating with a team, I enjoy the process that happens
+      before the final result is visible.
+    </p>
+    <hr>
+    <div class="panel-label">Target role</div>
+    <p><strong>EEPISAT — Internal Division</strong></p>
+  </aside>
+</section>
+
+<section id="about">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">01 · About me</div>
+      <h2 class="section-title">People.<br>Process.<br>Purpose.</h2>
+    </div>
+    <p class="section-intro">
+      I am interested in the space between people, ideas, and execution. I like communicating with
+      others, helping a team stay coordinated, and making sure my part of a project is done responsibly.
+      My background in multimedia gives me a creative perspective, while organizational and event
+      experiences have taught me how important people skills are.
+    </p>
+  </div>
+
+  <div class="about-grid">
+    <article class="card">
+      <h3>My working style</h3>
+      <p>
+        I try to be someone a team can rely on. When working on a project or event, I pay attention
+        to communication, preparation, timing, and the responsibilities that have been assigned.
+        I also believe that listening is part of teamwork: understanding what other members need
+        can make collaboration much smoother.
+      </p>
+      <div class="quote">
+        I do not want to be present only when the final result is shown. I want to contribute to the process that makes it happen.
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>What I am developing</h3>
+      <p>
+        My experiences have helped me build communication, coordination, teamwork, public performance,
+        creative production, and organizational responsibility. I am still learning, especially in
+        larger and more complex team environments, and that is one reason I want to join EEPISAT.
+      </p>
+      <div class="tags">
+        <span class="tag">Communication</span>
+        <span class="tag">Event Coordination</span>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Responsibility</span>
+        <span class="tag">Creative Direction</span>
+        <span class="tag">Adaptability</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="events">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">02 · Event experience</div>
+      <h2 class="section-title">Where teamwork becomes real.</h2>
+    </div>
+    <p class="section-intro">
+      Events are where I learned that communication and coordination are not abstract skills.
+      They directly affect whether a team can move together and whether an event can run as planned.
+    </p>
+  </div>
+
+  <div class="event-grid">
+
+    <article class="event">
+      <div class="event-no">01</div>
+      <div>
+        <h3>DBL Crew</h3>
+        <div class="event-type">Event Crew · Team Environment</div>
+        <p>
+          Being involved in DBL Crew gave me experience in a fast-moving event environment where
+          people need to communicate, understand their roles, and respond to situations together.
+          It strengthened my understanding that an event is built by many small responsibilities
+          working at the same time.
+        </p>
+      </div>
+      <div class="event-side">
+        <b>What it taught me</b>
+        <span>Communication, teamwork, discipline, coordination, and awareness of other team members.</span>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="event-no">02</div>
+      <div>
+        <h3>SMADA Cup</h3>
+        <div class="event-type">Teater Agni · Event Production</div>
+        <p>
+          At SMADA Cup, I worked behind and around the performance process as a music editor,
+          lighting operator, and performance director for Teater Agni. I had to coordinate the
+          creative and technical parts of the performance and work with other members so that
+          the performance could be delivered properly.
+        </p>
+      </div>
+      <div class="event-side">
+        <b>What it taught me</b>
+        <span>Technical coordination, responsibility, preparation, communication, and staying focused under pressure.</span>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="event-no">03</div>
+      <div>
+        <h3>Talk Show Sumpah Pemuda</h3>
+        <div class="event-type">PT KAI · Madiun Station</div>
+        <p>
+          I performed as part of a team in a poetry musicalization performance at the Youth Pledge
+          Talk Show organized by PT KAI at Madiun Railway Station. The experience required preparation,
+          synchronization, communication between performers, and confidence during a live public event.
+        </p>
+      </div>
+      <div class="event-side">
+        <b>What it taught me</b>
+        <span>Team synchronization, public communication, preparation, confidence, and live-event awareness.</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">03 · Projects</div>
+      <h2 class="section-title">Ideas I turned into work.</h2>
+    </div>
+    <p class="section-intro">
+      My projects cover creative production, public-service ideas, accessibility, nutrition,
+      and youth-related work. Different topics, but the same habit: understand a problem, build an idea,
+      and work with people to move it forward.
+    </p>
+  </div>
+
+  <div class="project-list">
+
+    <article class="project">
+      <div class="project-no">01</div>
+      <div>
+        <div class="project-type">Public service · digital innovation</div>
+        <h3>KARTINI & Si KiTA</h3>
+        <p>
+          A public-service digital concept designed around more integrated access to government services.
+          The concept includes KTPintar with the Si KiTA chatbot, KASPADU for tax administration,
+          KAWANSEHAT for health services, KIZIN for permits, and KELANA for transportation-related services.
+        </p>
+        <div class="pills"><span class="pill">Problem Solving</span><span class="pill">Digital Product</span><span class="pill">Public Service</span></div>
+      </div>
+      <div class="project-impact">
+        <b>My takeaway</b>
+        Translating a broad public problem into a structured digital concept and communicating the idea clearly.
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-no">02</div>
+      <div>
+        <div class="project-type">Accessibility · technology</div>
+        <h3>SmartSense Shoes</h3>
+        <p>
+          An assistive footwear concept for people with visual disabilities. The idea uses an ultrasonic
+          sensor to detect nearby obstacles and vibration feedback to communicate information to the user,
+          with additional considerations such as a charging dock and anti-slip sole.
+        </p>
+        <div class="pills"><span class="pill">Accessibility</span><span class="pill">Innovation</span><span class="pill">User Needs</span></div>
+      </div>
+      <div class="project-impact">
+        <b>My takeaway</b>
+        Starting from user needs and connecting technology with a practical everyday problem.
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-no">03</div>
+      <div>
+        <div class="project-type">Scientific writing · nutrition</div>
+        <h3>CalciYum</h3>
+        <p>
+          A functional smoothie innovation developed through scientific writing. The project combines
+          nutrition, health education, and creative presentation to make a health-related idea more
+          approachable for young audiences.
+        </p>
+        <div class="pills"><span class="pill">Research</span><span class="pill">Scientific Writing</span><span class="pill">Nutrition</span></div>
+      </div>
+      <div class="project-impact">
+        <b>My takeaway</b>
+        Organizing research into a clear idea and communicating technical information in a relatable way.
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-no">04</div>
+      <div>
+        <div class="project-type">Creative production · music</div>
+        <h3>“Meraih Mimpi”</h3>
+        <p>
+          An original song created during junior high school for a school anniversary project.
+          I contributed to the lyrics and melody while collaborating with the team to shape the song
+          into a performance.
+        </p>
+        <div class="pills"><span class="pill">Music</span><span class="pill">Collaboration</span><span class="pill">Creative Production</span></div>
+      </div>
+      <div class="project-impact">
+        <b>My takeaway</b>
+        Turning an initial creative idea into a shared work through discussion and collaboration.
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-no">05</div>
+      <div>
+        <div class="project-type">Youth advocacy · community</div>
+        <h3>Youth Aspiration & Government Collaboration</h3>
+        <p>
+          Contributed to youth programs involving communication between children and local government,
+          including conveying children's aspirations and supporting collaborative activities.
+        </p>
+        <div class="pills"><span class="pill">Advocacy</span><span class="pill">Communication</span><span class="pill">Community</span></div>
+      </div>
+      <div class="project-impact">
+        <b>My takeaway</b>
+        Learning to communicate perspectives across different groups and understand the importance of listening.
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-no">06</div>
+      <div>
+        <div class="project-type">Youth empowerment · programs</div>
+        <h3>Youth Participation Events</h3>
+        <p>
+          Participated in programs focused on children's participation, advocacy, and empowerment.
+          The activities involved working with members to prepare and support program implementation.
+        </p>
+        <div class="pills"><span class="pill">Planning</span><span class="pill">Teamwork</span><span class="pill">Youth Empowerment</span></div>
+      </div>
+      <div class="project-impact">
+        <b>My takeaway</b>
+        Understanding how preparation and coordination help a group deliver a meaningful activity.
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="organizations">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">04 · Organizations</div>
+      <h2 class="section-title">People I learned with.</h2>
+    </div>
+    <p class="section-intro">
+      Organizational experience taught me that responsibility is not only about finishing my own task.
+      It is also about communicating with people, understanding the bigger picture, and supporting the team.
+    </p>
+  </div>
+
+  <div class="org-grid">
+
+    <article class="org">
+      <div class="org-top">
+        <h3>Forum Anak Kota Madiun</h3>
+        <div class="role">Vice Chairperson II</div>
+      </div>
+      <p>
+        Worked within a youth organization involved in participation, advocacy, education, health,
+        and collaboration with different stakeholders.
+      </p>
+      <ul>
+        <li>Supported internal activities and program coordination.</li>
+        <li>Helped communicate children's aspirations and concerns.</li>
+        <li>Supported collaboration and youth participation programs.</li>
+      </ul>
+    </article>
+
+    <article class="org">
+      <div class="org-top">
+        <h3>Teater Agni</h3>
+        <div class="role">Treasurer</div>
+      </div>
+      <p>
+        Combined organizational responsibility with performing arts and production work.
+        I handled financial administration while also contributing to performances and events.
+      </p>
+      <ul>
+        <li>Managed budgeting, cash flow, and financial records.</li>
+        <li>Supported production needs for rehearsals and performances.</li>
+        <li>Worked as part of a performance team.</li>
+      </ul>
+    </article>
+
+    <article class="org">
+      <div class="org-top">
+        <h3>KIR Cakra</h3>
+        <div class="role">Division Staff</div>
+      </div>
+      <p>
+        Participated in planning and coordinating organizational events and scientific exploration activities.
+      </p>
+      <ul>
+        <li>Supported event concepts and schedules.</li>
+        <li>Coordinated technical preparation with committee members.</li>
+        <li>Contributed to scientific and creative activities.</li>
+      </ul>
+    </article>
+
+    <article class="org">
+      <div class="org-top">
+        <h3>OSIS SMP Negeri 1 Madiun</h3>
+        <div class="role">Vice President · 2022–2023</div>
+      </div>
+      <p>
+        An early leadership experience that introduced me to organization, event planning,
+        committee work, and coordination between students.
+      </p>
+      <ul>
+        <li>Supported student programs and organizational activities.</li>
+        <li>Worked across divisions during event preparation.</li>
+        <li>Learned responsibility from an early leadership role.</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">05 · Achievements</div>
+      <h2 class="section-title">Milestones along the way.</h2>
+    </div>
+    <p class="section-intro">
+      Achievements in arts, science, health, and visual work reflect the different areas I have explored
+      while learning how to prepare, compete, collaborate, and present a result.
+    </p>
+  </div>
+
+  <div class="achievement-list">
+
+    <article class="achievement">
+      <div class="achievement-date">NOV 2023</div>
+      <div>
+        <h3>Senior High School Student Mataraman Art Festival</h3>
+        <p>Bakorwil I Madiun · Teater Agni</p>
+      </div>
+      <strong>1st Place</strong>
+    </article>
+
+    <article class="achievement">
+      <div class="achievement-date">MAY 2024</div>
+      <div>
+        <h3>Poetry Musicalization Festival across East Java</h3>
+        <p>Balai Bahasa Provinsi Jawa Timur</p>
+      </div>
+      <strong>3rd Place</strong>
+    </article>
+
+    <article class="achievement">
+      <div class="achievement-date">NOV 2023</div>
+      <div>
+        <h3>National Biology Olympiad at SARCOMA</h3>
+        <p>Scientific Research and Academic Competition · AMSA-USK</p>
+      </div>
+      <strong>Gold Medal</strong>
+    </article>
+
+    <article class="achievement">
+      <div class="achievement-date">FEB 2026</div>
+      <div>
+        <h3>National Medical Olympiad — Senior High School Level</h3>
+        <p>National competition</p>
+      </div>
+      <strong>Gold Medal</strong>
+    </article>
+
+    <article class="achievement">
+      <div class="achievement-date">MAR 2026</div>
+      <div>
+        <h3>National Videography Competition 2026</h3>
+        <p>Infographic & Videography Competition · nutrition theme</p>
+      </div>
+      <strong>3rd Place</strong>
+    </article>
+
+    <article class="achievement">
+      <div class="achievement-date">OSN</div>
+      <div>
+        <h3>National Science Olympiad — Economics</h3>
+        <p>SMA Negeri 2 Madiun</p>
+      </div>
+      <strong>1st Place</strong>
+    </article>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">06 · What I bring</div>
+      <h2 class="section-title">Skills built through experience.</h2>
+    </div>
+    <p class="section-intro">
+      These are not meant to be perfect labels. They are the areas I have practiced through organizations,
+      events, performances, projects, and academic activities.
+    </p>
+  </div>
+
+  <div class="skill-grid">
+    <div class="skill"><b>Communication</b><span>Team communication · relationship building</span></div>
+    <div class="skill"><b>Teamwork</b><span>Collaboration · mutual support</span></div>
+    <div class="skill"><b>Event Coordination</b><span>Programs · events · preparation</span></div>
+    <div class="skill"><b>Responsibility</b><span>Assigned roles · follow-through</span></div>
+    <div class="skill"><b>Leadership</b><span>Organization · coordination</span></div>
+    <div class="skill"><b>Creative Direction</b><span>Music · stage · performance</span></div>
+    <div class="skill"><b>Public Performance</b><span>Poetry · theater · live events</span></div>
+    <div class="skill"><b>Music Editing</b><span>Performance technical support</span></div>
+    <div class="skill"><b>Lighting Operation</b><span>Stage technical operation</span></div>
+    <div class="skill"><b>Financial Administration</b><span>Budgeting · cash flow · records</span></div>
+    <div class="skill"><b>Creative Production</b><span>Multimedia · music · visual work</span></div>
+    <div class="skill"><b>Adaptability</b><span>Learning through new environments</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div>
+      <div class="section-kicker">07 · Let's connect</div>
+      <h2>I’m ready for the next team.</h2>
+      <p>
+        I want to join EEPISAT not simply to add another organization to my experience,
+        but to learn how to work with a new team, contribute where I can, and grow through
+        responsibilities that challenge me.
+      </p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:fadhila050507@gmail.com">Email ↗</a>
+      <a href="https://instagram.com/dhilarzk" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="tel:+6282335744839">Phone ↗</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>FADHILA RIZKI MUSTIKA KUSTRIYANINGRUM</span>
+  <span>EEPISAT PORTFOLIO · 2026</span>
+</footer>
+
+</body>
+</html>
